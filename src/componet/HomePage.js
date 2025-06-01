@@ -19,8 +19,8 @@ const HomePage = () => {
 
     const handleResumeDownload = () => {
         const link = document.createElement('a');
-        link.href = '/cv.pdf';
-        link.download = 'cv.pdf';
+        link.href = '/image/resume.jpg';
+        link.download = '/image/resume.jpg';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
