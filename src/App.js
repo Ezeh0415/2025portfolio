@@ -11,7 +11,7 @@ import Footer from "./componet/header/Footer";
 
 function App() {
   return (
-    <div className="md:max-w-[90%] md:mx-auto md:px-4 ">
+    <div className="md:max-w-[90%] md:mx-auto md:px-4">
       <BrowserRouter>
         <Navbar />
         {/* Define your routes here */}

@@ -18,6 +18,14 @@ const projects = [
     },
     {
         id: 3,
+        image: "/image/project/weather.png",
+        title: "weather site",
+        description: "A modern weather site built with react + tailwind, featuring fast navigation, SEO optimization, and responsive design.",
+        demo: "https://weather-sooty-seven.vercel.app/",
+        source: "https://github.com/Ezeh0415/Weather"
+    },
+    {
+        id: 12,
         image: "/image/project/old-portfolio.png",
         title: "nextjs portfolio",
         description: "A modern portfolio website built with Next.js, featuring fast navigation, SEO optimization, and responsive design.",
