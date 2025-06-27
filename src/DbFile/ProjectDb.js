@@ -1,6 +1,14 @@
 const projects = [
     {
         id: 1,
+        image: "/image/project/simple-blog.png",
+        title: "simple blog",
+        description: "This is a clean and responsive blog website where users can read, explore, and stay updated with posts on various topics. Built with simplicity in mind, the site displays blog posts with titles, categories, and publication dates. ",
+        demo: "https://simple-blog-seven-kappa.vercel.app/",
+        source: "https://github.com/Ezeh0415/simple-blog"
+    },
+    {
+        id: 13,
         image: "/image/project/de-reach-recipe.png",
         title: "recipe website",
         description: "A responsive recipe website built with html tailwind and javascript to showcase my projects and skills.",
@@ -13,7 +21,7 @@ const projects = [
         title: "E-commerce Store",
         // description: "An online store application with shopping cart and payment integration.",
         description: "A responsive recipe website built with react + tailwind to showcase my projects and skills.",
-        demo: "https://recipe-app-ezeh0415.vercel.app/",
+        demo: "https://recipe-app-qxwr.vercel.app/",
         source: "https://github.com/Ezeh0415/Recipe-app"
     },
     {

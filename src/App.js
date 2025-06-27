@@ -7,12 +7,14 @@ import Projects from "./componet/Projects";
 import ProjectDetails from "./componet/ProjectDetails";
 import Contact from "./componet/Contact";
 import Footer from "./componet/header/Footer";
+import { ProjectsProvider } from "./componet/contex-file/ProjectContex";
 
 
 function App() {
   return (
     <div className="md:max-w-[90%] md:mx-auto md:px-4">
       <BrowserRouter>
+        <ProjectsProvider>
         <Navbar />
         {/* Define your routes here */}
         {/* Example route */}
@@ -25,6 +27,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
+          </ProjectsProvider>
       </BrowserRouter>
     </div>
   );

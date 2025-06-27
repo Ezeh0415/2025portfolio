@@ -1,35 +1,11 @@
 import { Link } from 'react-router-dom'
-import projects from '../DbFile/ProjectDb'
 import { FaCss3Alt, FaGitAlt, FaHtml5, FaJs, FaReact } from 'react-icons/fa'
-import { useState } from 'react';
+import { useProjectActions } from './functions/functions'
 
 const HomePage = () => {
-    const [success, setSuccess] = useState(false);
-    const [message, setMessage] = useState('');
+    const { projects, success,message,handleEmailCopy,handleResumeDownload} = useProjectActions();
 
-    const handleEmailCopy = () => {
-        navigator.clipboard.writeText('Ezeanwechigozie@gmail.com');
-        setMessage('Email copied to clipboard!');
-        // Show success message for 2 seconds
-        setSuccess(true);
-        setTimeout(() => {
-            setSuccess(false);
-        }, 2000);
-    }
 
-    const handleResumeDownload = () => {
-        const link = document.createElement('a');
-        link.href = '/image/resume.jpg';
-        link.download = '/image/resume.jpg';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        setMessage('CV download started!');
-        setSuccess(true);
-        setTimeout(() => {
-            setSuccess(false);
-        }, 2000);
-    }
 return (
     <div>
         {success && (
@@ -149,7 +125,7 @@ return (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
                 {/* Project Card */}
                 
-                {projects.slice(0, 3).map((project) => {
+                {projects.slice(0, 4).map((project) => {
                     
                     // Destructure project properties
                     const {id, image, title, description, demo, source } = project;
