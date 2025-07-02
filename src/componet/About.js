@@ -16,7 +16,7 @@ return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <div className="bg-indigo-50 rounded-lg p-4 shadow">
                 <span className="font-medium text-gray-700">Experience:</span>
-                <div className="ml-2 text-gray-600">1+ years in front end web development</div>
+                <div className="ml-2 text-gray-600">2+ years in front end web development</div>
             </div>
             <div className="bg-indigo-50 rounded-lg p-4 shadow">
                 <span className="font-medium text-gray-700">Skills:</span>

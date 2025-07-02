@@ -1,11 +1,13 @@
 import React from 'react'
 import projects from '../DbFile/ProjectDb';
 import { Link } from 'react-router-dom';
+import { useProjectActions } from './functions/functions';
 
 const Projects = () => {
+    const {projects} = useProjectActions();
   return (
     <div className='mx-1 bg-gray-200'>
-      <li className='text-lg capitalize mt-[1rem]'>project</li>
+      <li className='text-lg uppercase font-bold mt-[1rem]'>projects</li>
 
       <div>
         <h2 className='text-2xl capitalize mt-2 font-semibold'>my works</h2>
@@ -36,7 +38,7 @@ const Projects = () => {
                             target="_blank"
                             className="text-xs font-medium text-white bg-indigo-700 hover:bg-indigo-800 px-3 py-1 rounded transition"
                         >
-                            View Demo
+                            View live
                         </Link>
                         <Link
                             to={source}

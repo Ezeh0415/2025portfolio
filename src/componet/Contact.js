@@ -1,49 +1,12 @@
-import { useState } from "react";
+import { useProjectActions } from './functions/functions'
 
 
 const Contact = () => {
-    const [success, setSuccess] = useState(false);
-    const [error, setError] = useState(false);
-    const [randomMessage, setRandomMessage] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Basic validation
-        if (!name || !email || !message) {
-            setErrorMessage('Please fill in all fields.');
-            setError(true);
-            return;
-        } else if (!email.includes('@')) {
-            setErrorMessage('Please enter a valid email address.');
-            setError(true);
-            return;
-        } else {
-            setError(false);
-            setSuccess(true);
-            setRandomMessage('you will be redirected to WhatsApp in 3 seconds');
-            // Simulate a delay before redirecting
-            setTimeout(() => {
-                 // Handle form submission logic here
-                const whatsappUrl = `https://wa.me/2349063810310?text=${encodeURIComponent(
-            `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-                )}`;
-                window.open(whatsappUrl, '_blank');
-                setSuccess(false);
-            }, 3000);
-        }
-        
-        // Reset form fields
-        setName('');
-        setEmail('');
-        setMessage('');
-        
-    };
+    const {handleChange , handleSubmit , formSuccess, error , randomMessage, errorMessage, formData } = useProjectActions();
+
 return (
     <div>
-        {success && (
+        {formSuccess && (
             <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center bg-green-500 text-white p-4 capitalize">
                 <p>{randomMessage}</p>
             </div>
@@ -56,7 +19,7 @@ return (
         )}
 
         {/* Contact Section */}
-        <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
+        <div className="mt-8 bg-white rounded-lg shadow-lg p-6 capitalize">
             <h2 className="text-lg font-bold text-slate-800 mb-4 border-b pb-2">Contact</h2>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div className="flex-1">
@@ -80,27 +43,30 @@ return (
                         <span className="text-slate-800 font-medium">+234 906 381 0310</span>
                     </div>
                 </div>
-                <form className="flex-1 flex flex-col gap-3">
+                <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-3">
                     <input
                         type="text"
                         placeholder="Your Name"
                         className="border border-slate-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                        onChange={e => setName(e.target.value)}
-                        value={name}
+                        name='name'
+                        onChange={handleChange}
+                        value={formData.name}
                     />
                     <input
                         type="email"
                         placeholder="Your Email"
                         className="border border-slate-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                        onChange={e => setEmail(e.target.value)}
-                        value={email}
+                        name='email'
+                        onChange={handleChange}
+                        value={formData.email}
                     />
                     <textarea
                         placeholder="Your Message"
                         rows={3}
                         className="border border-slate-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
-                        onChange={e => setMessage(e.target.value)}
-                        value={message}
+                        name='message'
+                        onChange={handleChange}
+                        value={formData.message}
                     />
                     <button
                         type="submit"

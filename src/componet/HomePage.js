@@ -27,7 +27,7 @@ return (
 
             <div className='flex items-center justify-between gap-2 mt-4'>
                 <div className='mt-3'>
-                    <h1 className='text-xl font-semibold capitalize md:text-3xl'>i`m ezeh godwin</h1>
+                    <h1 className='text-xl font-semibold capitalize md:text-3xl'> ezeh godwin |</h1>
                     <p className='text-xs text-gray-500 capitalize w-[200px] md:w-[600px] md:text-lg '>a front end web developer with a passion for creating beautiful and functional websites.</p>
                     <div className='mt-3 flex items-center gap-2'>
                         <Link to="/contact" className="text-xs font-bold text-center text-gray-100 capitalize flex items-center gap-1 border-2 border-indigo-400 w-fit px-2 py-1 rounded-lg bg-indigo-700 hover:bg-indigo-600 transition md:text-sm"> 
@@ -144,7 +144,7 @@ return (
                         target="_blank"
                         className="text-xs font-medium text-white bg-indigo-700 hover:bg-indigo-800 px-3 py-1 rounded transition"
                     >
-                        View Demo
+                        View live
                     </Link>
                     <Link
                         to={source}
@@ -157,6 +157,27 @@ return (
                         </div>
                     )
                 })}
+            </div>
+        </div>
+
+        {/* testimonies  */}
+        <div className="mt-6 bg-white rounded-lg shadow-lg p-4">
+            <h2 className="text-lg font-bold text-slate-800 mb-3 border-b pb-2 capitalize">testimonies </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="bg-slate-50 rounded-lg shadow p-4 flex flex-col items-start">
+                    <span className="font-medium text-indigo-700 mb-1">Lisa B., CTO at a HealthTech startup</span>
+                    <span className="text-slate-700 text-sm">Hey Godwin, just wanted to say thank you again. The dashboard UI looks amazing — much better than what we had before. Our team loved how you integrated the components using React and styled everything so smoothly with Tailwind. You’ll be our go-to dev from now on. Great job!</span>
+                </div>
+                <div className="bg-slate-50 rounded-lg shadow p-4 flex flex-col items-start">
+                    <span className="font-medium text-indigo-700 mb-1">@visualthinker | Fiverr Buyer</span>
+                    <span className="text-slate-700 text-sm">Absolutely incredible experience! I needed a responsive landing page built with HTML, CSS, and Tailwind. Godwin not only delivered it ahead of time but also optimized it for performance and mobile. He even helped fix a few React bugs for free. Highly recommend — will definitely order again!.</span>
+                </div>
+                <div className="bg-slate-50 rounded-lg shadow p-4 flex flex-col items-start">
+                    <span className="font-medium text-indigo-700 mb-1"> Danielle M., Product Manager at SaaS Startup</span>
+                    <span className="text-slate-700 text-sm capitalize">⭐️⭐️⭐️⭐️⭐️
+"Working with godwin was a game-changer for our frontend development. He rebuilt our dashboard using React and Tailwind CSS, resulting in a cleaner UI and better performance. Communication was smooth, deadlines were met, and the code quality was exceptional. Already rehiring for our next sprint!</span>
+                </div>
+                
             </div>
         </div>
 
@@ -182,8 +203,6 @@ return (
                 </div>
             </div>
         </div>
-
-       
     </div>
 
 )

@@ -1,8 +1,10 @@
 import { Link, useParams } from 'react-router-dom';
-import projects from '../DbFile/ProjectDb';
+import { useProjectActions } from './functions/functions';
 import { useEffect, useState } from 'react';
 
 const ProjectDetails = () => {
+    const {projects} = useProjectActions();
+    // state to hold project details
     const [title, setTitle] = useState("");
     const [Image, setImage] = useState("");
     const [description, setDescription] = useState("");
@@ -20,10 +22,10 @@ const ProjectDetails = () => {
                 setDemo(project.demo);
                 setSource(project.source);
             }
-        }, [id]);
+        }, [id,projects]);
   return (
     <div>
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-10 mt-12 border border-indigo-100">
+        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-4 mt-12 border border-indigo-100">
             <img
                 src={Image}
                 alt={title}
@@ -38,7 +40,7 @@ const ProjectDetails = () => {
                     rel="noopener noreferrer"
                     className="bg-indigo-700 hover:bg-indigo-800 text-white font-semibold py-2.5 px-6 rounded-lg shadow transition duration-150"
                 >
-                    Live Demo
+                    view live
                 </a>
                
                 <a
